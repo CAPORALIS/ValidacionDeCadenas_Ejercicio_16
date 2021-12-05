@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURP</title>
+</head>
+<body>
+    <h2>Ejercicio 16</h2>
+    <p>Ingrese su curp por favor (Mayusculas y 18 acarcteres alfanumericos ) </p>
+    <form name="formularioAcceso" action="paginaValidacion.html">
+        <input type="text" id="curp" placeholder="Ingrese su curp de 18 caracteres">
+        <input type="button" value="Enviar" onclick="verificacion()">
+
+    </form>
+    <script>
+        function verificacion(){
+            let valor=document.getElementById('curp').value;
+            
+           if(valor==""){
+            alert("Llenar su curp con 18 caracteres alfanumericos ");
+           }else{ 
+            if(/^[A-Z\d]{18}$/.test(valor)){
+                alert(valor+ ' Su curp es valida ');
+                document.formularioAcceso.submit(); 
+            }else{
+                alert(valor+' Su curp no es correcta ' );
+            } 
+          }
+        }
+    </script>
+</body>
+</html>
